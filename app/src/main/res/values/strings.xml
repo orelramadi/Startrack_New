@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Startrack</string>
+    <string name="settings">הגדרות</string>
+    <string name="categories">קטגוריות</string>
+    <string name="name">שם: </string>
+    <string name="phone_number">מספר פלאפון: </string>
+    <string name="email">אימייל: </string>
+    <string name="notification_switch">התראות: </string>
+    <string name="service_name">Upneti</string>
+    <string name="service_description">זו קבוצה לחיבורים עסקיים, שיתופי פעולה המלצות, מפגשי אונליין לעזרה הדדית, לצמיחה עסקית והעמקת ידע בנושאים אישיים.
+לחא פרסומות ובאווירה חברתית.
+בקבוצה ימצאו המעוניינים להתייעץ, לפרוק, לדון בנוגע לאתגרים יומיומיים, חיבורים עסקיים ובקשות.
+במידה והקריטריונים לעיל רלוונטיים עבורך,
+מזמינה אותך להצטרף</string>
+    <string name="pay_stars">שלם בכוכבים</string>
+    <string name="pay_paypal">שלם בפייפאל</string>
+    <string name="service_cost">10 כוכבים</string>
+    <string name="pay_option">בחר אופן תשלום</string>
+    <string name="add_stars_header">הוספת כוכבים</string>
+    <string name="add_stars">הוסף כוכבים</string>
+    <string name="stars_quantity">כמות כוכבים</string>
+</resources>
