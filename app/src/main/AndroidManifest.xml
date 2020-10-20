@@ -9,11 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".BusinessActivity"></activity>
         <activity
             android:name=".add_stars"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".service_detail" android:parentActivityName=".MainActivity"/>
+            android:name=".service_detail"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity_categories"
             android:parentActivityName=".MainActivity" />
