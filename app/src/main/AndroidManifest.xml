@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BusinessActivity"></activity>
+        <activity android:name=".register" android:parentActivityName=".login"></activity>
+        <activity android:name=".activity_categories" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".BusinessActivity" />
         <activity
             android:name=".add_stars"
             android:parentActivityName=".MainActivity" />
@@ -17,12 +20,9 @@
             android:name=".service_detail"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".activity_categories"
-            android:parentActivityName=".MainActivity" />
-        <activity
             android:name=".activity_settings"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,17 +1,39 @@
 <resources>
     <string name="app_name">Startrack</string>
+    // User
     <string name="settings">הגדרות</string>
     <string name="categories">קטגוריות</string>
+    <string name="notification_switch">התראות: </string>
+
+
+    // Login and Register
     <string name="name">שם: </string>
+    <string name="password">סיסמה: </string>
     <string name="phone_number">מספר פלאפון: </string>
     <string name="email">אימייל: </string>
-    <string name="notification_switch">התראות: </string>
+    <string name="required_field">שדה חובה: </string>
+    <string name="register">הירשם</string>
+    <string name="registration">הרשמה</string>
+    <string name="login">התחבר</string>
+    <string name="new_register">משתמש חדש ? הירשם עכשיו !</string>
+
     <string name="service_name">Upneti</string>
-    <string name="service_description">זו קבוצה לחיבורים עסקיים, שיתופי פעולה המלצות, מפגשי אונליין לעזרה הדדית, לצמיחה עסקית והעמקת ידע בנושאים אישיים.
+    <string name="upneti_description">זו קבוצה לחיבורים עסקיים, שיתופי פעולה המלצות, מפגשי אונליין לעזרה הדדית, לצמיחה עסקית והעמקת ידע בנושאים אישיים.
 ללא פרסומות ובאווירה חברתית.
 בקבוצה ימצאו המעוניינים להתייעץ, לפרוק, לדון בנוגע לאתגרים יומיומיים, חיבורים עסקיים ובקשות.
 במידה והקריטריונים לעיל רלוונטיים עבורך,
 מזמינה אותך להצטרף.</string>
+    <string name="magicflex_description">המוצר של MagicFlex הוא כלי דיגיטלי ואוטומטי מבוסס בינה מלאכותית, המביא לשיפור משמעותי בתפעול ויציבות הביצועים של "חוות השרתים(Data Centers) ".
+
+המוצר שלנו ממפה את מרכיבי המערכות (חומרה ותוכנת הפעלה), מבצע אנליזות באופן אוטומטי ומספק התראות על תקלות קיימות ועל נקודות לטיפול על פי רמת הסיכון בכדי למנוע תקלות עתידיות. בנוסף, הוא מציג תוכנית תיקון לכל סוג ורמה של תקלה קיימת או תקלה עתידית, שהמוצר עצמו איתר.
+
+בשורה התחתונה, השימוש בכלי של MagicFlex חוסך משאבים רבים וזמן בניהול "חוות השרתים", ומוריד באופן משמעותי את הסיכון לנפילות (Outage) ותקלות.
+
+בין לקוחותינו נמצאים בנקים, חברות ביטוח, משרדי ממשלה ועיריות, חברות אינטגרציה ועוד.
+
+כל לקוחותינו מעידים על שיפור משמעותי ביציבות של "חוות השרתים" ובביצועים, שלא ניתן היה להשיגם בכל דרך אחרת.
+
+</string>
     <string name="pay_stars">שלם בכוכבים</string>
     <string name="pay_paypal">שלם בפייפאל</string>
     <string name="service_cost">10 כוכבים</string>
@@ -24,4 +46,5 @@
     <string name="phone">Phone Number</string>
     <string name="cost_star">Cost Stars</string>
     <string name="cost_paypal">Cost Paypal</string>
+    <string name="stars">כוכבים</string>
 </resources>
