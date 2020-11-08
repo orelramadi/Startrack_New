@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435237823481:android:40c59f2b6ffe3198e09328",
+        "android_client_info": {
+          "package_name": "com.upstore.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435237823481-rjqrc3kpt88a7eusop8auk3aeje7tmh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClw2UQsf80rCoYg7B15n_FFEPGduck0Cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435237823481-rjqrc3kpt88a7eusop8auk3aeje7tmh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Startrack</string>
+    <string name="app_name">UPstore</string>
     // User
     <string name="settings">הגדרות</string>
     <string name="categories">קטגוריות</string>
@@ -8,21 +8,22 @@
 
     // Login and Register
     <string name="name">שם: </string>
+    <string name="name_business">שם העסק: </string>
     <string name="password">סיסמה: </string>
     <string name="phone_number">מספר פלאפון: </string>
     <string name="email">אימייל: </string>
     <string name="required_field">שדה חובה: </string>
     <string name="register">הירשם</string>
-    <string name="registration">הרשמה</string>
+    <string name="registration_user">הרשמה - חשבון אישי</string>
+    <string name="registration_business">הרשמה - חשבון עסקי</string>
+    <string name="registration_business_description">הסבר בקצרה: </string>
+    <string name="new_register_business">עסק חדש ? הירשם עכשיו !</string>
     <string name="login">התחבר</string>
     <string name="new_register">משתמש חדש ? הירשם עכשיו !</string>
 
     <string name="service_name">Upneti</string>
-    <string name="upneti_description">זו קבוצה לחיבורים עסקיים, שיתופי פעולה המלצות, מפגשי אונליין לעזרה הדדית, לצמיחה עסקית והעמקת ידע בנושאים אישיים.
-ללא פרסומות ובאווירה חברתית.
-בקבוצה ימצאו המעוניינים להתייעץ, לפרוק, לדון בנוגע לאתגרים יומיומיים, חיבורים עסקיים ובקשות.
-במידה והקריטריונים לעיל רלוונטיים עבורך,
-מזמינה אותך להצטרף.</string>
+    <string name="upneti_description">חיבורים עסקיים, שיתופי פעולה המלצות, מפגשי אונליין לעזרה הדדית, לצמיחה עסקית והעמקת ידע בנושאים אישיים.
+    כל מה שעסק צריך לצמוח ולהצליח בקהילה אחת.</string>
     <string name="magicflex_description">המוצר של MagicFlex הוא כלי דיגיטלי ואוטומטי מבוסס בינה מלאכותית, המביא לשיפור משמעותי בתפעול ויציבות הביצועים של "חוות השרתים(Data Centers) ".
 
 המוצר שלנו ממפה את מרכיבי המערכות (חומרה ותוכנת הפעלה), מבצע אנליזות באופן אוטומטי ומספק התראות על תקלות קיימות ועל נקודות לטיפול על פי רמת הסיכון בכדי למנוע תקלות עתידיות. בנוסף, הוא מציג תוכנית תיקון לכל סוג ורמה של תקלה קיימת או תקלה עתידית, שהמוצר עצמו איתר.
@@ -41,10 +42,12 @@
     <string name="add_stars_header">הוספת כוכבים</string>
     <string name="add_stars">הוסף כוכבים</string>
     <string name="stars_quantity">כמות כוכבים</string>
+    <string name="business_stars_cost">עלות בכוכבים: </string>
     <string name="business_name">Business Name</string>
     <string name="description">Description</string>
     <string name="phone">Phone Number</string>
     <string name="cost_star">Cost Stars</string>
     <string name="cost_paypal">Cost Paypal</string>
     <string name="stars">כוכבים</string>
+    <string name="star_balance">star_balance</string>
 </resources>

@@ -7,7 +7,7 @@
         android:title="@string/settings"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/categories"
+        android:id="@+id/add_stars"
         android:title="@string/categories"
         app:showAsAction="never"/>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.startrack.myapplication">
+    package="com.upstore.myapplication">
 
     <application
         android:allowBackup="true"
@@ -9,20 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".register" android:parentActivityName=".login"></activity>
-        <activity android:name=".activity_categories" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".BusinessActivity" />
+        <activity android:name="com.upstore.myapplication.register_business"></activity>
         <activity
-            android:name=".add_stars"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.upstore.myapplication.register"
+            android:parentActivityName="com.upstore.myapplication.login" />
+        <activity android:name="com.upstore.myapplication.activity_categories" />
+        <activity android:name="com.upstore.myapplication.MainActivity" />
+        <activity android:name="com.upstore.myapplication.BusinessActivity" />
         <activity
-            android:name=".service_detail"
-            android:parentActivityName=".MainActivity" />
+            android:name="com.upstore.myapplication.add_stars"
+            android:parentActivityName="com.upstore.myapplication.MainActivity" />
         <activity
-            android:name=".activity_settings"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".login">
+            android:name="com.upstore.myapplication.activity_settings"
+            android:parentActivityName="com.upstore.myapplication.MainActivity" />
+        <activity android:name="com.upstore.myapplication.login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
