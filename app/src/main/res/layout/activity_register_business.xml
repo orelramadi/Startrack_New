@@ -6,6 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".register_business">
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <TextView
         android:id="@+id/register_title_business"
         android:layout_width="wrap_content"
@@ -13,7 +18,7 @@
         android:fontFamily="sans-serif-condensed"
         android:text="@string/registration_business"
         android:textAllCaps="true"
-        android:textColor="#2196F3"
+        android:textColor="@color/colorAccent"
         android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="124dp"
-        android:background="#2196F3"
+        android:background="@color/colorAccent"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/register"
         android:textStyle="bold"
@@ -142,5 +147,7 @@
         app:layout_constraintVertical_bias="0.867"
         tools:ignore="HardcodedText,LabelFor"
         android:importantForAutofill="no" />
+
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

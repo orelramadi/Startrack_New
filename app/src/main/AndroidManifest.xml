@@ -9,20 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.upstore.myapplication.register_business"></activity>
+        <activity android:name=".service"></activity>
         <activity
-            android:name="com.upstore.myapplication.register"
-            android:parentActivityName="com.upstore.myapplication.login" />
-        <activity android:name="com.upstore.myapplication.activity_categories" />
-        <activity android:name="com.upstore.myapplication.MainActivity" />
-        <activity android:name="com.upstore.myapplication.BusinessActivity" />
+            android:name=".register_business"
+            android:parentActivityName=".login" />
         <activity
-            android:name="com.upstore.myapplication.add_stars"
-            android:parentActivityName="com.upstore.myapplication.MainActivity" />
+            android:name=".register"
+            android:parentActivityName=".login" />
         <activity
-            android:name="com.upstore.myapplication.activity_settings"
-            android:parentActivityName="com.upstore.myapplication.MainActivity" />
-        <activity android:name="com.upstore.myapplication.login">
+            android:name=".activity_categories"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".MainActivity" />
+        <activity
+            android:name=".BusinessActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".add_stars"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".activity_settings"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

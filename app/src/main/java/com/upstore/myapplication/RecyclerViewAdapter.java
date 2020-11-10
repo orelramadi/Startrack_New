@@ -37,7 +37,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @Override
     public void onBindViewHolder(@NonNull MyHolder myHolder, final int i) {
 
-        myHolder.business_title.setText(mData.get(i).getBusiness_name());
 
         myHolder.img_business_thumbnail.setImageResource(mData.get(i).getThumbnail());
 
@@ -65,14 +64,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     public static class MyHolder extends RecyclerView.ViewHolder {
-        TextView business_title;
         CardView cardView;
         ImageView img_business_thumbnail;
 
         public MyHolder(@NonNull View itemView) {
             super(itemView);
 
-            business_title = (TextView)itemView.findViewById(R.id.business_id);
+
             img_business_thumbnail = (ImageView)itemView.findViewById(R.id.logo);
             cardView = (CardView)itemView.findViewById(R.id.cardview);
         }

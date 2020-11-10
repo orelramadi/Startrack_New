@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         businesses = new ArrayList<>();
         businesses.add(new Businesses(R.drawable.upneti, "קהילה למפגשים ופיתוח עסקי אונליין", getString(R.string.upneti_description), "050-577-0500", "164", "10$"));
-        businesses.add(new Businesses(R.mipmap.magicflex_foreground, "MagicFlex", getString(R.string.magicflex_description), "03-444-5555", "10", "15$"));
+        businesses.add(new Businesses(R.mipmap.magicflex_foreground, "MagicFlex Analysis Software", getString(R.string.magicflex_description), "03-444-5555", "10", "15$"));
         businesses.add(new Businesses(R.mipmap.tovana_foreground, getString(R.string.tovana_name), getString(R.string.tovana_description), getString(R.string.tovana_phone), "Cost Stars", "Cost Paypal"));
         businesses.add(new Businesses(R.mipmap.tzahi_foreground, getString(R.string.Tzahi_Touito_name), getString(R.string.Tzahi_Touito_description), getString(R.string.Tzahi_Touito_phone), "Cost Stars", "Cost Paypal"));
         businesses.add(new Businesses(R.mipmap.ofer_foreground, getString(R.string.ofer_name), getString(R.string.ofer_description), getString(R.string.ofer_phone), "Cost Stars", "Cost Paypal"));

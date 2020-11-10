@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ public class register_business extends AppCompatActivity implements View.OnClick
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_business);
+
 
         mAuth = FirebaseAuth.getInstance();
 

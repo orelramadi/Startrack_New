@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.EventListener;
+
 public class BusinessActivity extends AppCompatActivity {
 
 
@@ -16,8 +18,6 @@ public class BusinessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business);
-
-
 
         ImageView mBusinessLogo = (ImageView) findViewById(R.id.logo);
         TextView mBusinessName = (TextView) findViewById(R.id.text_business);
@@ -47,6 +47,15 @@ public class BusinessActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Payment_Stars_Dialog payment_stars_dialog = new Payment_Stars_Dialog();
                 payment_stars_dialog.show(getSupportFragmentManager(), "Example Dialog");
+            }
+        });
+
+        Button image_button_service = (Button) findViewById(R.id.image_card_view_service);
+        image_button_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(BusinessActivity.this, service.class);
+                startActivity(intent1);
             }
         });
 
