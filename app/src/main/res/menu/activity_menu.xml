@@ -7,8 +7,12 @@
         android:title="@string/settings"
         app:showAsAction="never"/>
     <item
-        android:id="@+id/add_stars"
-        android:title="@string/categories"
+        android:id="@+id/buy_stars"
+        android:title="@string/buy_stars"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/transaction_history"
+        android:title="@string/transaction_history"
         app:showAsAction="never"/>
 
 

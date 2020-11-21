@@ -7,14 +7,14 @@ import android.text.Html;
 import android.view.View;
 import android.widget.EditText;
 
-public class add_stars extends AppCompatActivity {
+public class buy_stars extends AppCompatActivity {
     String new_star_quantity;
     Integer x,y;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_stars);
+        setContentView(R.layout.activity_buy_stars);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
     }
 

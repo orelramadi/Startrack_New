@@ -1,48 +1,86 @@
 package com.upstore.myapplication;
 
 public class Businesses {
-    private int Thumbnail;
-    private String Business_name;
-    private String Business_description;
-    private String Business_phone;
-    private String Business_cost_star;
-    private String Business_cost_paypal;
 
+    private String name, email, phone, description, description_short, banner;
+    private long cost_stars, cost_ils;
 
-    public Businesses (int thumbnail, String name, String description, String phone, String cost_star, String paypal ){
+    public Businesses(){}
 
-        Thumbnail = thumbnail;
-        Business_name = name;
-        Business_description = description;
-        Business_phone = phone;
-        Business_cost_star = cost_star;
-        Business_cost_paypal = paypal;
-
+    private Businesses(String name, String email, String phone, String description, String description_short, String banner, long cost_stars, long cost_ils){
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
+        this.description = description;
+        this.description_short = description_short;
+        this.banner = banner;
+        this.cost_stars = cost_stars;
+        this.cost_ils = cost_ils;
     }
 
 
-    public String getBusiness_name(){
-        return Business_name;
+    public String getName() {
+        return name;
     }
 
-    public String getBusiness_description(){
-        return Business_description;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getBusiness_phone(){
-        return Business_phone;
+    public String getEmail() {
+        return email;
     }
 
-    public String getBusiness_cost_star(){
-        return Business_cost_star;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getBusiness_cost_paypal(){
-        return Business_cost_paypal;
+    public String getPhone() {
+        return phone;
     }
 
-    public int getThumbnail(){
-        return Thumbnail;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getDescription_short() {
+        return description_short;
+    }
+
+    public void setDescription_short(String description_short) {
+        this.description_short = description_short;
+    }
+
+    public long getCost_stars() {
+        return cost_stars;
+    }
+
+    public void setCost_stars(long cost_stars) {
+        this.cost_stars = cost_stars;
+    }
+
+    public long getCost_ils() {
+        return cost_ils;
+    }
+
+    public void setCost_ils(long cost_ils) {
+        this.cost_ils = cost_ils;
+    }
+
+    public String getBanner() {
+        return banner;
+    }
+
+    public void setBanner(String banner) {
+        this.banner = banner;
+    }
 }
+

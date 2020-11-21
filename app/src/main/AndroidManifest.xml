@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.upstore.myapplication">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_icon_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".service"></activity>
+        <activity android:name=".service"/>
         <activity
             android:name=".register_business"
             android:parentActivityName=".login" />
@@ -24,7 +26,7 @@
             android:name=".BusinessActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".add_stars"
+            android:name=".buy_stars"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".activity_settings"

@@ -39,15 +39,17 @@
     <string name="pay_paypal">שלם בפייפאל</string>
     <string name="service_cost">10 כוכבים</string>
     <string name="pay_option">בחר אופן תשלום</string>
-    <string name="add_stars_header">הוספת כוכבים</string>
+    <string name="add_stars_header">קניית כוכבים</string>
     <string name="add_stars">הוסף כוכבים</string>
     <string name="stars_quantity">כמות כוכבים</string>
     <string name="business_stars_cost">עלות בכוכבים: </string>
     <string name="business_name">Business Name</string>
     <string name="description">Description</string>
     <string name="phone">Phone Number</string>
-    <string name="cost_star">Cost Stars</string>
-    <string name="cost_paypal">Cost Paypal</string>
+    <string name="cost_star">מחיר בכוכבים</string>
+    <string name="cost_paypal">מחיר בשקלים</string>
     <string name="stars">כוכבים</string>
-    <string name="star_balance">star_balance</string>
+    <string name="star_balance">יתרת כוכבים</string>
+    <string name="buy_stars">קניית כוכבים</string>
+    <string name="transaction_history">היסטוריית רכישות</string>
 </resources>

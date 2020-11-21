@@ -21,8 +21,8 @@
 
     <ImageView
         android:id="@+id/profile_pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="415dp"
+        android:layout_height="144dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -56,7 +56,7 @@
         app:layout_constraintVertical_bias="0.689" />
 
     <TextView
-        android:id="@+id/nickname"
+        android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layoutDirection="rtl"
@@ -105,60 +105,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.737" />
-
-    <Button
-        android:id="@+id/change_nickname_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_baseline_create_24"
-        android:layoutDirection="rtl"
-        app:layout_constraintBottom_toBottomOf="@+id/nickname"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/nickname"
-        app:layout_constraintVertical_bias="1.0"
-        android:onClick="change_nickname"/>
-
-    <Button
-        android:id="@+id/change_phone_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_baseline_create_24"
-        android:layoutDirection="rtl"
-        app:layout_constraintBottom_toBottomOf="@+id/phone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/phone"
-        app:layout_constraintVertical_bias="0.625"
-        android:onClick="change_phone"/>
-
-    <Button
-        android:id="@+id/change_email_button"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/ic_baseline_create_24"
-        android:layoutDirection="rtl"
-        app:layout_constraintBottom_toBottomOf="@+id/email"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.255"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/email"
-        app:layout_constraintVertical_bias="0.0"
-        android:onClick="change_email"/>
-
-    <Switch
-        android:id="@+id/notification_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="124dp"
-        android:layoutDirection="rtl"
-        android:text="@string/notification_switch"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/email"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/email"
-        android:onClick="toggle"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
