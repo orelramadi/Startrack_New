@@ -46,7 +46,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/logo" />
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/business_description"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -59,68 +59,17 @@
                 app:layout_constraintTop_toBottomOf="@+id/text_business"
                 tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="18dp"
-                android:layout_marginTop="16dp"
-                android:text="@string/phone"
-                android:textSize="20sp"
-                android:visibility="invisible"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/description" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="24dp"
-                android:text="@string/business_stars_cost"
-                android:visibility="invisible"
-                app:layout_constraintStart_toEndOf="@+id/buy_in_stars"
-                app:layout_constraintTop_toBottomOf="@+id/phone" />
-
-            <TextView
-                android:id="@+id/buy_in_stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="18dp"
-                android:layout_marginTop="16dp"
-                android:text="0"
-                android:textSize="20sp"
-                android:visibility="invisible"
-                app:layout_constraintStart_toStartOf="@+id/phone"
-                app:layout_constraintTop_toBottomOf="@+id/phone"
-                tools:ignore="HardcodedText" />
-
-            <Button
-                android:id="@+id/pay_stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="52dp"
-                android:text="@string/pay_stars"
-                android:textSize="21sp"
-                android:textStyle="bold"
-                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-            <Button
-                android:id="@+id/image_card_view_service"
-                android:layout_width="401dp"
-                android:layout_height="75dp"
-                android:text="שירות"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/pay_stars" />
+                app:layout_constraintTop_toBottomOf="@+id/business_description"
+                app:layout_constraintVertical_bias="1.0" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

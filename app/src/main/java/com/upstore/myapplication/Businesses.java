@@ -2,18 +2,19 @@ package com.upstore.myapplication;
 
 public class Businesses {
 
-    private String name, email, phone, description, description_short, banner;
+    private String name, email, phone, description, description_short, banner, service1;
     private long cost_stars, cost_ils;
 
     public Businesses(){}
 
-    private Businesses(String name, String email, String phone, String description, String description_short, String banner, long cost_stars, long cost_ils){
+    private Businesses(String name, String email, String phone, String description, String description_short, String banner, String service1, long cost_stars, long cost_ils){
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.description = description;
         this.description_short = description_short;
         this.banner = banner;
+        this.service1 = service1;
         this.cost_stars = cost_stars;
         this.cost_ils = cost_ils;
     }
@@ -81,6 +82,14 @@ public class Businesses {
 
     public void setBanner(String banner) {
         this.banner = banner;
+    }
+
+    public String getService1() {
+        return service1;
+    }
+
+    public void setService1(String service1) {
+        this.service1 = service1;
     }
 }
 

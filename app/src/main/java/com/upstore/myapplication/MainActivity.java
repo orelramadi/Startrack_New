@@ -50,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     ArrayList<Businesses> businessesList;
     RecyclerAdapter recyclerAdapter;
-
     private DatabaseReference myRef;
     private Context mContext;
 
