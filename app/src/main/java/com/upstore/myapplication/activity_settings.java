@@ -39,9 +39,12 @@ public class activity_settings extends AppCompatActivity {
         db_users = FirebaseDatabase.getInstance().getReference("Users");
         userID = mAuth.getUid();
 
-        final TextView name = (TextView) findViewById(R.id.name);
+        final TextView name = (TextView) findViewById(R.id.profile_name);
+        final TextView name_change = (TextView) findViewById(R.id.profile_name_change);
         final TextView phone = (TextView) findViewById(R.id.phone);
+        final TextView stars = (TextView) findViewById(R.id.stars_balance);
         final TextView email = (TextView) findViewById(R.id.email);
+        final TextView email_change = (TextView) findViewById(R.id.email_change);
 
 
 
@@ -49,11 +52,15 @@ public class activity_settings extends AppCompatActivity {
             db_users.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    Business businessProfile = snapshot.getValue(Business.class);
-                    assert businessProfile != null;
-                    name.setText(businessProfile.name);
-                    phone.setText(businessProfile.phone);
-                    email.setText(businessProfile.email);
+                    User userProfile = snapshot.getValue(User.class);
+                    assert userProfile != null;
+                    name.setText(userProfile.name);
+                    phone.setText(userProfile.phone);
+                    email.setText(userProfile.email);
+                    stars.setText(userProfile.stars);
+                    name_change.setText(userProfile.name);
+                    email_change.setText(userProfile.email);
+
                 }
 
                 @Override

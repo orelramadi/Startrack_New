@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.telecom.Call;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,18 +19,24 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.model.Model;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
 
     private Context mContext;
     private ArrayList<Businesses> businessesList;
+    private DatabaseReference myRef;
+
+
 
     public RecyclerAdapter(Context mContext, ArrayList<Businesses> businessesList) {
-        this.businessesList = businessesList;
         this.mContext = mContext;
+        this.businessesList = businessesList;
     }
 
     @NonNull
@@ -45,6 +50,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         Glide.with(mContext).load(businessesList.get(position).getBanner()).into(holder.imageView);
+
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext, BusinessActivity.class);
+                Bundle bundle = new Bundle();
+                String BusiName = "Name";
+                bundle.putString("BName",BusiName);
+                intent.putExtras(bundle);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -56,18 +75,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
         ImageView imageView;
 
-        public ViewHolder (@NonNull View itemView) {
+        public ViewHolder (@NonNull final View itemView) {
             super(itemView);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent (mContext, BusinessActivity.class);
-                    intent.putExtra("B_Name", businessesList.add());
-                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    mContext.startActivity(intent);
-
-                }
-            });
             imageView = itemView.findViewById(R.id.banner);
         }
     }

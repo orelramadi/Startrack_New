@@ -18,5 +18,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <include
+        android:id="@+id/stars_hover_balance"
         layout="@layout/stars_hover_balance"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,6 +26,7 @@ import android.widget.Toast;
 
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -76,6 +77,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent buy_stars = new Intent(this, buy_stars.class);
                 startActivity(buy_stars);
                 return true;
+            case R.id.transaction_history:
+                Intent transaction_history = new Intent(this,transaction_history.class);
+                startActivity(transaction_history);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -88,6 +93,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
 
+
+        FloatingActionButton floatingActionButton = (FloatingActionButton) findViewById(R.id.floatingActionButton);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,activity_settings.class);
+                startActivity(intent);
+            }
+        });
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         db_users = FirebaseDatabase.getInstance().getReference("Users");
         userID = mAuth.getUid();
@@ -150,6 +164,7 @@ public class MainActivity extends AppCompatActivity {
                 recyclerAdapter = new RecyclerAdapter(getApplicationContext(), businessesList);
                 recyclerView.setAdapter(recyclerAdapter);
                 recyclerAdapter.notifyDataSetChanged();
+
             }
 
             @Override
