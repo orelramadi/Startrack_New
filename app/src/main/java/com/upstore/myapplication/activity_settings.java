@@ -43,7 +43,6 @@ public class activity_settings extends AppCompatActivity {
         final TextView name_change = (TextView) findViewById(R.id.profile_name_change);
         final TextView phone = (TextView) findViewById(R.id.phone);
         final TextView stars = (TextView) findViewById(R.id.stars_balance);
-        final TextView email = (TextView) findViewById(R.id.email);
         final TextView email_change = (TextView) findViewById(R.id.email_change);
 
 
@@ -56,7 +55,6 @@ public class activity_settings extends AppCompatActivity {
                     assert userProfile != null;
                     name.setText(userProfile.name);
                     phone.setText(userProfile.phone);
-                    email.setText(userProfile.email);
                     stars.setText(userProfile.stars);
                     name_change.setText(userProfile.name);
                     email_change.setText(userProfile.email);
