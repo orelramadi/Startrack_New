@@ -40,6 +40,7 @@ public class BusinessActivity extends AppCompatActivity {
     private Context mContext;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +51,10 @@ public class BusinessActivity extends AppCompatActivity {
         TextView business_name = (TextView) findViewById(R.id.text_business);
         TextView business_description = (TextView) findViewById(R.id.business_description);
 
-        Toast.makeText(BusinessActivity.this,"This is a test ",Toast.LENGTH_LONG).show();
-        String BNAME = getIntent().getStringExtra("BName");
-        business_name.setText(BNAME);
 
-
-
-
+    }
+}
+    /*/
         //GetDataFromFirebase();
 
 
@@ -123,3 +121,4 @@ public class BusinessActivity extends AppCompatActivity {
 
 
 }
+/*/

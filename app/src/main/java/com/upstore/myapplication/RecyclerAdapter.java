@@ -56,11 +56,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(mContext, BusinessActivity.class);
-                Bundle bundle = new Bundle();
-                String BusiName = "Name";
-                bundle.putString("BName",BusiName);
-                intent.putExtras(bundle);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 mContext.startActivity(intent);
             }
         });
@@ -72,7 +68,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-
         ImageView imageView;
 
         public ViewHolder (@NonNull final View itemView) {
