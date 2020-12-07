@@ -1,15 +1,15 @@
 package com.upstore.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,10 +23,10 @@ public class buy_stars extends AppCompatActivity {
     private FirebaseUser mAuth;
     private DatabaseReference db_users;
     private String userID, stars_balance_floating;
-    Integer x, y;
+    Integer y;
     String new_star_quantity;
-    TextView currect_stars;
-    ImageView button_add_stars;
+    EditText stars_buy_quantity;
+    Button button_buy_stars;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +34,8 @@ public class buy_stars extends AppCompatActivity {
         setContentView(R.layout.activity_buy_stars);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
 
-        currect_stars = findViewById(R.id.stars_quantity_add_value);
-        currect_stars.getText().toString();
-        button_add_stars = findViewById(R.id.stars_quantity_add_button);
+        button_buy_stars = findViewById(R.id.buy_stars);
+        stars_buy_quantity = findViewById(R.id.stars_buy_quantity);
 
         mAuth = FirebaseAuth.getInstance().getCurrentUser();
         db_users = FirebaseDatabase.getInstance().getReference("Users");
@@ -59,15 +58,24 @@ public class buy_stars extends AppCompatActivity {
                 }
             });
         }
-        button_add_stars.setOnClickListener(new View.OnClickListener() {
+
+        button_buy_stars.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                x = Integer.parseInt(currect_stars.getText().toString());
-                y = Integer.parseInt(stars_balance.getText().toString());
-                new_star_quantity = Integer.toString(x + y);
-                stars_balance.setText(new_star_quantity);
+                db_users.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        User userProfile = snapshot.getValue(User.class);
+                        assert userProfile != null;
+                        //db_users.child(userID).child("stars").setValue(new_star_quantity);
+                        Toast.makeText(buy_stars.this,"The new value is "+new_star_quantity,Toast.LENGTH_LONG).show();
+                    }
 
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
+                    }
+                });
             }
         });
     }

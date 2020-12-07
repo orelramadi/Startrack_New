@@ -181,11 +181,22 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
+                android:id="@+id/save_info_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/update_profile"
                 android:fontFamily="@font/bungee"
                 android:background="@color/colorAccent"/>
+
+            <Button
+                android:id="@+id/add_credit_card_button"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/add_credit_card"
+                android:fontFamily="@font/bungee"
+                android:layout_marginTop="5dp"
+                android:background="#FFC107"/>
         </LinearLayout>
 
     </LinearLayout>

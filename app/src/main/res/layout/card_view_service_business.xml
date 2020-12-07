@@ -17,7 +17,7 @@
 
         <ImageView
             android:id="@+id/image_card_view_service"
-            android:layout_width="401dp"
+            android:layout_width="400dp"
             android:layout_height="75dp"
             android:adjustViewBounds="false"
             android:clickable="true"
@@ -27,8 +27,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@mipmap/magicflex_enc_service_foreground" />
+            app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -53,4 +53,8 @@
     <string name="buy_stars">קניית כוכבים</string>
     <string name="transaction_history">היסטוריית רכישות</string>
     <string name="update_profile">שמור</string>
+    <string name="add_credit_card">הוסף כרטיס אשראי</string>
+    <string name="add_credit_card_number">"מספר כרטיס אשראי: "</string>
+    <string name="add_credit_card_date">"תוקף: "</string>
+    <string name="add_credit_card_cvc">3 ספרות בגב הכרטיס :</string>
 </resources>

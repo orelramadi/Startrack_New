@@ -1,26 +1,23 @@
 package com.upstore.myapplication;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.FirebaseUserMetadata;
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.StorageReference;
 
 public class activity_settings extends AppCompatActivity {
 
@@ -44,6 +41,8 @@ public class activity_settings extends AppCompatActivity {
         final TextView phone = (TextView) findViewById(R.id.phone);
         final TextView stars = (TextView) findViewById(R.id.stars_balance);
         final TextView email_change = (TextView) findViewById(R.id.email_change);
+        Button Save_info_button = (Button) findViewById(R.id.save_info_button);
+        Button Add_credit_card_button = (Button) findViewById(R.id.add_credit_card_button);
 
 
 
@@ -66,6 +65,38 @@ public class activity_settings extends AppCompatActivity {
                     Toast.makeText(activity_settings.this, "לא קיים מידע עבור משתמש זה", Toast.LENGTH_LONG).show();
                 }
             });
+
+            Save_info_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    db_users.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            User userProfile = snapshot.getValue(User.class);
+                            if (userProfile.name != name_change.getText().toString()){
+                            db_users.child(userID).child("name").setValue(name_change.getEditableText().toString());
+                            }
+                            if (userProfile.phone != phone.getText().toString()){
+                                db_users.child(userID).child("phone").setValue(phone.getEditableText().toString());
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }
+            });
+
+            Add_credit_card_button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent add_credit_card_activity = new Intent(activity_settings.this,add_credit_card.class);
+                    startActivity(add_credit_card_activity);
+                }
+            });
+
         }
     }
 }
