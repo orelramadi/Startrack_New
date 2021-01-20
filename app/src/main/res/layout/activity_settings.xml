@@ -6,10 +6,19 @@
     android:layout_height="match_parent"
     tools:context=".activity_settings">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            app:theme="@style/ToolbarColoredBackArrow"
+            app:popupTheme="@style/AppTheme"/>
 
 
         <RelativeLayout

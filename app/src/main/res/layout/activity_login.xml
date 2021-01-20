@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".login">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorAccent"
+        app:theme="@style/ToolbarColoredBackArrow"
+        app:popupTheme="@style/AppTheme"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/register_app_name"
         android:layout_width="wrap_content"

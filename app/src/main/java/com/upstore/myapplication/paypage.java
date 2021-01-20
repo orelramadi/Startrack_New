@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 
@@ -18,6 +19,9 @@ public class paypage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_paypage);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
 
         final Intent intent = this.getIntent();
@@ -30,6 +34,20 @@ public class paypage extends AppCompatActivity {
         Button pay_paypal = (Button) findViewById(R.id.service_pay_paypal);
 
         Glide.with(this).load(businesses.getService1()).into(current_service_image);
+
+        /*if(businesses.getService1() != null){
+            Glide.with(this).load(businesses.getService1()).into(current_service_image);
+        }
+        if(businesses.getService2() != null){
+            Glide.with(this).load(businesses.getService2()).into(current_service_image);
+        }
+        if(businesses.getService3() != null){
+            Glide.with(this).load(businesses.getService3()).into(current_service_image);
+        }
+        else {
+            Toast.makeText(paypage.this, "Problem to identify key", Toast.LENGTH_SHORT).show();
+        }*/
+
 
 
         pay_star.setOnClickListener(new View.OnClickListener() {

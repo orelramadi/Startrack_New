@@ -34,8 +34,7 @@
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".BusinessActivity"
-            android:parentActivityName=".MainActivity" />
+            android:name=".BusinessActivity" />
         <activity
             android:name=".buy_stars"
             android:parentActivityName=".MainActivity" />

@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -30,6 +31,9 @@ public class BusinessActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_business);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
         final Intent intent = this.getIntent();
         final Bundle bundle=intent.getExtras();
@@ -83,14 +87,20 @@ public class BusinessActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent serviceTwo = new Intent(BusinessActivity.this,paypage.class);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("key",businesses);
+                serviceTwo.putExtras(bundle);
                 startActivity(serviceTwo);
             }
         });
         ServiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent serviceOne = new Intent(BusinessActivity.this,paypage.class);
-                startActivity(serviceOne);
+                Intent serviceThree = new Intent(BusinessActivity.this,paypage.class);
+                Bundle bundle=new Bundle();
+                bundle.putSerializable("key",businesses);
+                serviceThree.putExtras(bundle);
+                startActivity(serviceThree);
             }
         });
 

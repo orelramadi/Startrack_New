@@ -5,8 +5,9 @@
     android:layout_height="wrap_content"
     android:background="#FFEB3B"
     android:elevation="4dp"
+    android:id="@+id/toolbar"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-    app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    app:popupTheme="@style/ToolbarColoredBackArrow">
 
 
 </androidx.appcompat.widget.Toolbar>
