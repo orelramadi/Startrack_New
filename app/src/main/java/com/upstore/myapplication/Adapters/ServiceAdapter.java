@@ -1,4 +1,4 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.upstore.myapplication.BusinessActivity;
+import com.upstore.myapplication.R;
+import com.upstore.myapplication.Services;
 
 import java.util.List;
 
@@ -42,7 +45,7 @@ public class ServiceAdapter extends RecyclerView.Adapter {
         viewHolderClass.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(view.getContext(),BusinessActivity.class);
+                Intent intent=new Intent(view.getContext(), BusinessActivity.class);
                 Bundle bundle=new Bundle();
                 bundle.putSerializable("key",services);
                 intent.putExtras(bundle);

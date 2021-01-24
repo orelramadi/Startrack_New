@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.firebase.database.DatabaseReference;
+import com.upstore.myapplication.Adapters.ServiceAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,9 @@ public class BusinessActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(Html.fromHtml("<font color=\"black\">" + getString(R.string.app_name) + "</font>"));
+
+        //Send Intent to next activity
+
         final Intent intent = this.getIntent();
         final Bundle bundle=intent.getExtras();
         final Businesses businesses=(Businesses)bundle.getSerializable("key");
@@ -48,37 +52,28 @@ public class BusinessActivity extends AppCompatActivity {
 
 
 
-        if(businesses.getLogo() != null){
+        if(businesses.getBanner() != null){
             Glide.with(this).load(businesses.getLogo()).into(business_logo);
-        }else {
-            Glide.with(this).load(businesses.getBanner()).into(business_logo);
-        }
-        if(businesses.getLogo() != null){
             business_name.setText(businesses.getName());
-        }else {
-            business_name.setText(businesses.getName());
-        }
-        if(businesses.getLogo() != null){
             business_description.setText(businesses.getDescription());
-        }else {
-            business_description.setText(businesses.getDescription());
+        }else{
+
         }
-        if(businesses.getService1() != null){
+
+        if(businesses.getService1() != null && businesses.getService2() != null && businesses.getService3() != null){
             Glide.with(this).load(businesses.getService1()).into(ServiceOne);
-        }
-        if(businesses.getService2() != null){
             Glide.with(this).load(businesses.getService2()).into(ServiceTwo);
-        }
-        if(businesses.getService3() != null){
             Glide.with(this).load(businesses.getService3()).into(ServiceThree);
+        }else {
+
         }
 
         ServiceOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent serviceOne = new Intent(BusinessActivity.this,paypage.class);
+                Intent serviceOne = new Intent(BusinessActivity.this, ServiceBusinessActivity.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("key",businesses);
+                bundle.putSerializable("service1",businesses);
                 serviceOne.putExtras(bundle);
                 startActivity(serviceOne);
             }
@@ -86,9 +81,9 @@ public class BusinessActivity extends AppCompatActivity {
         ServiceTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent serviceTwo = new Intent(BusinessActivity.this,paypage.class);
+                Intent serviceTwo = new Intent(BusinessActivity.this, ServiceBusinessActivity.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("key",businesses);
+                bundle.putSerializable("service2",businesses);
                 serviceTwo.putExtras(bundle);
                 startActivity(serviceTwo);
             }
@@ -96,106 +91,12 @@ public class BusinessActivity extends AppCompatActivity {
         ServiceThree.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent serviceThree = new Intent(BusinessActivity.this,paypage.class);
+                Intent serviceThree = new Intent(BusinessActivity.this, ServiceBusinessActivity.class);
                 Bundle bundle=new Bundle();
-                bundle.putSerializable("key",businesses);
+                bundle.putSerializable("service3",businesses);
                 serviceThree.putExtras(bundle);
                 startActivity(serviceThree);
             }
         });
-
-        /*/
-        recyclerViewService=findViewById(R.id.recyclerviewservice);
-        recyclerViewService.setLayoutManager(new LinearLayoutManager(this));
-
-        servicesList=new ArrayList<>();
-        myRef=FirebaseDatabase.getInstance().getReference("Businesses");
-        myRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for(DataSnapshot ds:dataSnapshot.getChildren()){
-                    Services services=ds.getValue(Services.class);
-                    servicesList.add(services);
-                }
-                serviceAdapter=new ServiceAdapter(servicesList);
-                recyclerViewService.setAdapter(serviceAdapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-         /*/
-
     }
 }
-    /*/
-        //GetDataFromFirebase();
-
-
-
-        recyclerView = findViewById(R.id.recyclerview);
-
-        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setHasFixedSize(true);
-
-        // Firebase
-        myRef = FirebaseDatabase.getInstance().getReference();
-
-        // ArrayList
-        businessesList = new ArrayList<>();
-
-        // Clear ArrayList
-        ClearAll();
-
-        // Get Data Method
-        GetDataFromFirebase();
-
-    }
-
-
-    private void GetDataFromFirebase() {
-
-        DatabaseReference query = myRef.child("Businesses");
-
-        query.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                ClearAll();
-                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                    Businesses businesses = new Businesses();
-
-                    businesses.setBanner(snapshot.child("service1").getValue().toString());
-                    businessesList.add(businesses);
-                }
-                recyclerAdapter = new RecyclerAdapter(getApplicationContext(), businessesList);
-                recyclerView.setAdapter(recyclerAdapter);
-                recyclerAdapter.notifyDataSetChanged();
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-    }
-
-
-    private void ClearAll(){
-        if (businessesList != null){
-            businessesList.clear();
-
-            if (recyclerAdapter != null){
-                recyclerAdapter.notifyDataSetChanged();
-            }
-        }
-        businessesList = new ArrayList<>();
-    }
-
-
-}
-/*/

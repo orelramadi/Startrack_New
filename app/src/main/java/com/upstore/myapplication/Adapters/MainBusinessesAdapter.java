@@ -1,32 +1,24 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.model.Model;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.ValueEventListener;
+import com.upstore.myapplication.BusinessActivity;
+import com.upstore.myapplication.Businesses;
+import com.upstore.myapplication.R;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHolder> {
+public class MainBusinessesAdapter extends RecyclerView.Adapter<MainBusinessesAdapter.ViewHolder> {
 
     private Context mContext;
     private ArrayList<Businesses> businessesList;
@@ -34,14 +26,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
 
 
 
-    public RecyclerAdapter(Context mContext, ArrayList<Businesses> businessesList) {
+    public MainBusinessesAdapter(Context mContext, ArrayList<Businesses> businessesList) {
         this.mContext = mContext;
         this.businessesList = businessesList;
     }
 
     @NonNull
     @Override
-    public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MainBusinessesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardview_business, parent, false);
 
         return new ViewHolder(view);

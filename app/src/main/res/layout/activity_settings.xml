@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_settings">
+    tools:context=".Menu.activity_settings">
 
 
     <LinearLayout
@@ -105,6 +105,7 @@
                 app:cardElevation="10dp">
 
                 <RelativeLayout
+                    android:id="@+id/transaction_history"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:padding="5dp">

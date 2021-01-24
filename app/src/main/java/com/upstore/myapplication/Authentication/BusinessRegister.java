@@ -1,7 +1,4 @@
-package com.upstore.myapplication;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.upstore.myapplication.Authentication;
 
 import android.os.Bundle;
 import android.text.Html;
@@ -13,13 +10,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.upstore.myapplication.Model.BusinessModel;
+import com.upstore.myapplication.R;
 
-public class register_business extends AppCompatActivity implements View.OnClickListener{
+public class BusinessRegister extends AppCompatActivity implements View.OnClickListener{
 
     private EditText Business_Name, Business_Email, Business_Password, Business_Phone, Business_Description, Business_Description_Short, Business_Cost_Stars, Business_Stars;
     private ProgressBar progressBar;
@@ -105,7 +107,7 @@ public class register_business extends AppCompatActivity implements View.OnClick
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Business business = new Business(name, email, password, phone, description, description_short, cost_stars, stars);
+                            BusinessModel business = new BusinessModel(name, email, password, phone, description, description_short, cost_stars, stars);
 
                             FirebaseDatabase.getInstance().getReference("Businesses")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -113,16 +115,16 @@ public class register_business extends AppCompatActivity implements View.OnClick
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(register_business.this,"נרשמת בהצלחה !",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(BusinessRegister.this,"נרשמת בהצלחה !",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }else {
-                                        Toast.makeText(register_business.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(BusinessRegister.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }else {
-                            Toast.makeText(register_business.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
+                            Toast.makeText(BusinessRegister.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }

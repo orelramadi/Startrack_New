@@ -1,7 +1,4 @@
-package com.upstore.myapplication;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.upstore.myapplication.Authentication;
 
 import android.os.Bundle;
 import android.util.Patterns;
@@ -12,13 +9,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
+import com.upstore.myapplication.Model.UserModel;
+import com.upstore.myapplication.R;
 
-public class register extends AppCompatActivity implements View.OnClickListener{
+public class UserRegister extends AppCompatActivity implements View.OnClickListener{
 
     private EditText User_Name, User_Email, User_Password, User_Phone, User_Stars;
     private ProgressBar progressBar;
@@ -96,24 +98,24 @@ public class register extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user = new User(name, email, password, phone, stars);
+                            UserModel userModel = new UserModel(name, email, password, phone, stars);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .setValue(userModel).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(register.this,"נרשמת בהצלחה !",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserRegister.this,"נרשמת בהצלחה !",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }else {
-                                        Toast.makeText(register.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
+                                        Toast.makeText(UserRegister.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         }else {
-                            Toast.makeText(register.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
+                            Toast.makeText(UserRegister.this,"ההרשמה נכשלה",Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                         }

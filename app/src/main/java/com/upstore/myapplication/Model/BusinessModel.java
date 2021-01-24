@@ -1,15 +1,15 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Model;
 
-public class Business {
+public class BusinessModel {
 
     public String name, email, password, phone, description, description_short, cost_stars ,stars;
 
-    public Business(){
+    public BusinessModel(){
 
     }
 
 
-    public Business(String name, String email, String password, String phone,String description,String description_short, String cost_stars, String stars) {
+    public BusinessModel(String name, String email, String password, String phone, String description, String description_short, String cost_stars, String stars) {
         this.name = name;
         this.email = email;
         this.password = password;

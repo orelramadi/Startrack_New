@@ -24,6 +24,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.upstore.myapplication.Cash.Transaction_History;
+import com.upstore.myapplication.Menu.activity_settings;
+import com.upstore.myapplication.Model.UserModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(buy_stars);
                 return true;
             case R.id.transaction_history:
-                Intent transaction_history = new Intent(this, transaction_history.class);
+                Intent transaction_history = new Intent(this, Transaction_History.class);
                 startActivity(transaction_history);
                 return true;
             default:
@@ -120,8 +123,8 @@ public class MainActivity extends AppCompatActivity {
             db_users.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    User userProfile = snapshot.getValue(User.class);
-                    String user_stars = userProfile.stars;
+                    UserModel userModelProfile = snapshot.getValue(UserModel.class);
+                    String user_stars = userModelProfile.stars;
                     stars_balance.setText(user_stars);
                 }
 

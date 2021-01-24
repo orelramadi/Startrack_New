@@ -1,4 +1,4 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Authentication;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,11 +19,15 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.upstore.myapplication.MainActivity;
+import com.upstore.myapplication.R;
 
-public class login extends AppCompatActivity implements View.OnClickListener{
+public class Activity_Login extends AppCompatActivity implements View.OnClickListener{
 
     private EditText User_Email, User_Password;
     private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
     private ProgressBar progressBar;
 
     @Override
@@ -50,6 +54,13 @@ public class login extends AppCompatActivity implements View.OnClickListener{
 
         mAuth = FirebaseAuth.getInstance();
 
+        mUser = FirebaseAuth.getInstance().getCurrentUser();
+
+
+        if (mUser != null) {
+            Intent intent = new Intent(Activity_Login.this, MainActivity.class);
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -60,11 +71,11 @@ public class login extends AppCompatActivity implements View.OnClickListener{
                 break;
 
             case R.id.register_button_personal:
-                startActivity(new Intent(this, register.class));
+                startActivity(new Intent(this, UserRegister.class));
                 break;
 
             case R.id.register_button_business:
-                startActivity(new Intent(this, register_business.class));
+                startActivity(new Intent(this, BusinessRegister.class));
                 break;
 
         }
@@ -101,10 +112,10 @@ public class login extends AppCompatActivity implements View.OnClickListener{
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    startActivity(new Intent(login.this,MainActivity.class));
+                    startActivity(new Intent(Activity_Login.this, MainActivity.class));
                     progressBar.setVisibility(View.GONE);
                 }else {
-                    Toast.makeText(login.this,"המשתמש או הסיסמה לא נכונים",Toast.LENGTH_LONG).show();
+                    Toast.makeText(Activity_Login.this,"המשתמש או הסיסמה לא נכונים",Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }

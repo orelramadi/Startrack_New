@@ -1,10 +1,11 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Menu;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.upstore.myapplication.Cash.Transaction_History;
+import com.upstore.myapplication.Database.add_credit_card;
+import com.upstore.myapplication.Model.UserModel;
+import com.upstore.myapplication.R;
 
 public class activity_settings extends AppCompatActivity {
 
@@ -47,6 +52,7 @@ public class activity_settings extends AppCompatActivity {
         final TextView email_change = (TextView) findViewById(R.id.email_change);
         Button Save_info_button = (Button) findViewById(R.id.save_info_button);
         Button Add_credit_card_button = (Button) findViewById(R.id.add_credit_card_button);
+        RelativeLayout transaction_history = (RelativeLayout) findViewById(R.id.transaction_history);
 
 
 
@@ -54,13 +60,13 @@ public class activity_settings extends AppCompatActivity {
             db_users.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    User userProfile = snapshot.getValue(User.class);
-                    assert userProfile != null;
-                    name.setText(userProfile.name);
-                    phone.setText(userProfile.phone);
-                    stars.setText(userProfile.stars);
-                    name_change.setText(userProfile.name);
-                    email_change.setText(userProfile.email);
+                    UserModel userModelProfile = snapshot.getValue(UserModel.class);
+                    assert userModelProfile != null;
+                    name.setText(userModelProfile.name);
+                    phone.setText(userModelProfile.phone);
+                    stars.setText(userModelProfile.stars);
+                    name_change.setText(userModelProfile.name);
+                    email_change.setText(userModelProfile.email);
 
                 }
 
@@ -76,11 +82,11 @@ public class activity_settings extends AppCompatActivity {
                     db_users.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            User userProfile = snapshot.getValue(User.class);
-                            if (userProfile.name != name_change.getText().toString()){
+                            UserModel userModelProfile = snapshot.getValue(UserModel.class);
+                            if (userModelProfile.name != name_change.getText().toString()){
                             db_users.child(userID).child("name").setValue(name_change.getEditableText().toString());
                             }
-                            if (userProfile.phone != phone.getText().toString()){
+                            if (userModelProfile.phone != phone.getText().toString()){
                                 db_users.child(userID).child("phone").setValue(phone.getEditableText().toString());
                             }
                         }
@@ -96,8 +102,16 @@ public class activity_settings extends AppCompatActivity {
             Add_credit_card_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent add_credit_card_activity = new Intent(activity_settings.this,add_credit_card.class);
+                    Intent add_credit_card_activity = new Intent(activity_settings.this, add_credit_card.class);
                     startActivity(add_credit_card_activity);
+                }
+            });
+
+            transaction_history.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent transaction_history = new Intent(activity_settings.this, Transaction_History.class);
+                    startActivity(transaction_history);
                 }
             });
 

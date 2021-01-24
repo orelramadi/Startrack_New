@@ -1,9 +1,11 @@
-package com.upstore.myapplication;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.upstore.myapplication.Menu;
 
 import android.os.Bundle;
 import android.text.Html;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.upstore.myapplication.R;
 
 public class activity_categories extends AppCompatActivity {
 

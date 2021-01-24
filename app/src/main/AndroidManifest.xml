@@ -12,36 +12,37 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".add_credit_card"
-            android:parentActivityName=".activity_settings"/>
+            android:name=".Database.add_credit_card"
+            android:parentActivityName=".Menu.activity_settings"/>
         <activity
-            android:name=".paypage"
+            android:name=".ServiceBusinessActivity"
             android:parentActivityName=".BusinessActivity" />
         <activity
-            android:name=".transaction_history"
-            android:parentActivityName=".MainActivity" />
+            android:name=".Cash.Transaction_History"
+            android:parentActivityName=".Menu.activity_settings" />
         <activity
             android:name=".service"
             android:parentActivityName=".BusinessActivity" />
         <activity
-            android:name=".register_business"
-            android:parentActivityName=".login" />
+            android:name=".Authentication.BusinessRegister"
+            android:parentActivityName=".Authentication.Activity_Login" />
         <activity
-            android:name=".register"
-            android:parentActivityName=".login" />
+            android:name=".Authentication.UserRegister"
+            android:parentActivityName=".Authentication.Activity_Login" />
         <activity
-            android:name=".activity_categories"
+            android:name=".Menu.activity_categories"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".BusinessActivity" />
+            android:name=".BusinessActivity"
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".buy_stars"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".activity_settings"
+            android:name=".Menu.activity_settings"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".login">
+        <activity android:name=".Authentication.Activity_Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

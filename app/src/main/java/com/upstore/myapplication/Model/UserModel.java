@@ -1,16 +1,16 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Model;
 
-public class User {
+public class UserModel {
 
 
     public String name, email, password, phone, stars;
 
-    public User(){
+    public UserModel(){
 
     }
 
 
-    public User(String name, String email, String password, String phone, String stars){
+    public UserModel(String name, String email, String password, String phone, String stars){
         this.name = name;
         this.email = email;
         this.password = password;

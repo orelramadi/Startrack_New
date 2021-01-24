@@ -1,4 +1,4 @@
-package com.upstore.myapplication;
+package com.upstore.myapplication.Cash;
 
 import android.os.Bundle;
 import android.text.Html;
@@ -6,7 +6,9 @@ import android.text.Html;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class transaction_history extends AppCompatActivity {
+import com.upstore.myapplication.R;
+
+public class Transaction_History extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

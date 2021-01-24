@@ -19,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.upstore.myapplication.Model.UserModel;
 
 public class buy_stars extends AppCompatActivity {
     private FirebaseUser mAuth;
@@ -51,8 +52,8 @@ public class buy_stars extends AppCompatActivity {
             db_users.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    User userProfile = snapshot.getValue(User.class);
-                    String user_stars = userProfile.stars;
+                    UserModel userModelProfile = snapshot.getValue(UserModel.class);
+                    String user_stars = userModelProfile.stars;
                     stars_balance.setText(user_stars);
                 }
 
@@ -69,8 +70,8 @@ public class buy_stars extends AppCompatActivity {
                 db_users.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User userProfile = snapshot.getValue(User.class);
-                        assert userProfile != null;
+                        UserModel userModelProfile = snapshot.getValue(UserModel.class);
+                        assert userModelProfile != null;
                         //db_users.child(userID).child("stars").setValue(new_star_quantity);
                         Toast.makeText(buy_stars.this,"The new value is "+new_star_quantity,Toast.LENGTH_LONG).show();
                     }
