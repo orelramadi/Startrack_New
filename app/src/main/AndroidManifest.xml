@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Database.add_credit_card"
+            android:name=".Cash.add_credit_card"
             android:parentActivityName=".Menu.activity_settings"/>
         <activity
             android:name=".ServiceBusinessActivity"

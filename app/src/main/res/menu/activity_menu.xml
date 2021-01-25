@@ -14,6 +14,10 @@
         android:id="@+id/transaction_history"
         android:title="@string/transaction_history"
         app:showAsAction="never"/>
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+        app:showAsAction="never"/>
 
 
 </menu>

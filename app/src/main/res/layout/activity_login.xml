@@ -66,7 +66,7 @@
         android:layout_marginTop="44dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="#FFEB3B"
+        android:background="@color/colorAccent"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/login"
         android:textStyle="bold"

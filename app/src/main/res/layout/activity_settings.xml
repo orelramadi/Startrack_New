@@ -34,18 +34,6 @@
                 android:layout_centerVertical="true"
                 android:src="@drawable/ic_baseline_person_24" />
 
-            <TextView
-                android:id="@+id/profile_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="10dp"
-                android:layout_toRightOf="@+id/profile_image"
-                android:fontFamily="@font/bungee"
-                android:includeFontPadding="false"
-                android:text="Profile Name"
-                android:textSize="20dp" />
-
 
         </RelativeLayout>
 
@@ -151,7 +139,7 @@
                 android:layout_marginBottom="10dp"
                 android:hint="@string/name">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/profile_name_change"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -166,7 +154,7 @@
                 android:layout_marginBottom="10dp"
                 android:hint="@string/email">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/email_change"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -181,7 +169,7 @@
                 android:layout_marginBottom="10dp"
                 android:hint="@string/phone_number">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <TextView
                     android:id="@+id/phone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

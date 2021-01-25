@@ -21,7 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.upstore.myapplication.Cash.Transaction_History;
-import com.upstore.myapplication.Database.add_credit_card;
+import com.upstore.myapplication.Cash.add_credit_card;
 import com.upstore.myapplication.Model.UserModel;
 import com.upstore.myapplication.R;
 
@@ -45,7 +45,6 @@ public class activity_settings extends AppCompatActivity {
         db_users = FirebaseDatabase.getInstance().getReference("Users");
         userID = mAuth.getUid();
 
-        final TextView name = (TextView) findViewById(R.id.profile_name);
         final TextView name_change = (TextView) findViewById(R.id.profile_name_change);
         final TextView phone = (TextView) findViewById(R.id.phone);
         final TextView stars = (TextView) findViewById(R.id.stars_balance);
@@ -55,14 +54,12 @@ public class activity_settings extends AppCompatActivity {
         RelativeLayout transaction_history = (RelativeLayout) findViewById(R.id.transaction_history);
 
 
-
         if (mAuth != null) {
             db_users.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     UserModel userModelProfile = snapshot.getValue(UserModel.class);
                     assert userModelProfile != null;
-                    name.setText(userModelProfile.name);
                     phone.setText(userModelProfile.phone);
                     stars.setText(userModelProfile.stars);
                     name_change.setText(userModelProfile.name);

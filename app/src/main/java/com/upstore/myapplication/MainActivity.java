@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.upstore.myapplication.Authentication.Activity_Login;
 import com.upstore.myapplication.Cash.Transaction_History;
 import com.upstore.myapplication.Menu.activity_settings;
 import com.upstore.myapplication.Model.UserModel;
@@ -66,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.transaction_history:
                 Intent transaction_history = new Intent(this, Transaction_History.class);
                 startActivity(transaction_history);
+                return true;
+            case R.id.logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, Activity_Login.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

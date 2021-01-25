@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
-import com.upstore.myapplication.Database.add_credit_card;
+import com.upstore.myapplication.Cash.add_credit_card;
 
 public class ServiceBusinessActivity extends AppCompatActivity {
 
